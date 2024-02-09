@@ -10,7 +10,7 @@ Work in progress
 ## Current Features
 - Browsing functionality to view various artworks in the collection
 - Search functionality to view preferred artworks
-- Find your favorite new art piece through the ranomizer button
+- Find your favorite new art piece through the randomizer button
 
 ## TODO
 - Save favorite art pieces to the favorites tab
