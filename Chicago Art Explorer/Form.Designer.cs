@@ -30,26 +30,32 @@
         {
             searchBox = new TextBox();
             searchButton = new Button();
-            headerPanel = new Panel();
             favoritesButton = new Button();
             exitButton = new Button();
             randomButton = new Button();
             browseButton = new Button();
-            flowLayoutPanel = new FlowLayoutPanel();
-            headerPanel.SuspendLayout();
+            panel = new Panel();
+            tableLayoutPanel = new TableLayoutPanel();
+            headerRight = new FlowLayoutPanel();
+            headerLeft = new FlowLayoutPanel();
+            tableLayoutPanel.SuspendLayout();
+            headerRight.SuspendLayout();
+            headerLeft.SuspendLayout();
             SuspendLayout();
             // 
             // searchBox
             // 
-            searchBox.Location = new Point(439, 9);
+            searchBox.Location = new Point(21, 3);
+            searchBox.Margin = new Padding(3, 3, 0, 3);
             searchBox.Name = "searchBox";
             searchBox.Size = new Size(257, 23);
             searchBox.TabIndex = 1;
-            searchBox.TextChanged += searchBox_TextChanged;
+            searchBox.KeyDown += searchBox_KeyDown;
             // 
             // searchButton
             // 
-            searchButton.Location = new Point(692, 9);
+            searchButton.Location = new Point(278, 3);
+            searchButton.Margin = new Padding(0, 3, 20, 3);
             searchButton.Name = "searchButton";
             searchButton.Size = new Size(52, 23);
             searchButton.TabIndex = 2;
@@ -57,23 +63,9 @@
             searchButton.UseVisualStyleBackColor = true;
             searchButton.Click += searchButton_Click;
             // 
-            // headerPanel
-            // 
-            headerPanel.Controls.Add(favoritesButton);
-            headerPanel.Controls.Add(exitButton);
-            headerPanel.Controls.Add(randomButton);
-            headerPanel.Controls.Add(browseButton);
-            headerPanel.Controls.Add(searchBox);
-            headerPanel.Controls.Add(searchButton);
-            headerPanel.Dock = DockStyle.Top;
-            headerPanel.Location = new Point(0, 0);
-            headerPanel.Name = "headerPanel";
-            headerPanel.Size = new Size(875, 43);
-            headerPanel.TabIndex = 3;
-            // 
             // favoritesButton
             // 
-            favoritesButton.Location = new Point(193, 10);
+            favoritesButton.Location = new Point(199, 3);
             favoritesButton.Name = "favoritesButton";
             favoritesButton.Size = new Size(75, 23);
             favoritesButton.TabIndex = 6;
@@ -83,7 +75,7 @@
             // 
             // exitButton
             // 
-            exitButton.Location = new Point(783, 10);
+            exitButton.Location = new Point(353, 3);
             exitButton.Name = "exitButton";
             exitButton.Size = new Size(75, 23);
             exitButton.TabIndex = 5;
@@ -93,7 +85,8 @@
             // 
             // randomButton
             // 
-            randomButton.Location = new Point(99, 10);
+            randomButton.Location = new Point(101, 3);
+            randomButton.Margin = new Padding(3, 3, 20, 3);
             randomButton.Name = "randomButton";
             randomButton.Size = new Size(75, 23);
             randomButton.TabIndex = 4;
@@ -103,7 +96,9 @@
             // 
             // browseButton
             // 
-            browseButton.Location = new Point(7, 10);
+            browseButton.Dock = DockStyle.Top;
+            browseButton.Location = new Point(3, 3);
+            browseButton.Margin = new Padding(3, 3, 20, 3);
             browseButton.Name = "browseButton";
             browseButton.Size = new Size(75, 23);
             browseButton.TabIndex = 3;
@@ -111,42 +106,87 @@
             browseButton.UseVisualStyleBackColor = true;
             browseButton.Click += homeButton_Click;
             // 
-            // flowLayoutPanel1
+            // panel
             // 
-            flowLayoutPanel.AutoScroll = true;
-            flowLayoutPanel.AutoSize = true;
-            flowLayoutPanel.Dock = DockStyle.Fill;
-            flowLayoutPanel.Location = new Point(0, 43);
-            flowLayoutPanel.Name = "flowLayoutPanel";
-            flowLayoutPanel.Size = new Size(875, 407);
-            flowLayoutPanel.TabIndex = 4;
+            panel.AutoScroll = true;
+            panel.BackColor = SystemColors.Control;
+            tableLayoutPanel.SetColumnSpan(panel, 2);
+            panel.Dock = DockStyle.Fill;
+            panel.Location = new Point(3, 39);
+            panel.Name = "panel";
+            panel.Size = new Size(869, 408);
+            panel.TabIndex = 4;
+            panel.Tag = "";
             // 
-            // Form1
+            // tableLayoutPanel
+            // 
+            tableLayoutPanel.ColumnCount = 2;
+            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50.0571442F));
+            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 49.9428558F));
+            tableLayoutPanel.Controls.Add(headerRight, 1, 0);
+            tableLayoutPanel.Controls.Add(panel, 0, 1);
+            tableLayoutPanel.Controls.Add(headerLeft, 0, 0);
+            tableLayoutPanel.Dock = DockStyle.Fill;
+            tableLayoutPanel.Location = new Point(0, 0);
+            tableLayoutPanel.Name = "tableLayoutPanel";
+            tableLayoutPanel.RowCount = 2;
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 88.6666641F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.Size = new Size(875, 450);
+            tableLayoutPanel.TabIndex = 5;
+            // 
+            // headerRight
+            // 
+            headerRight.Controls.Add(exitButton);
+            headerRight.Controls.Add(searchButton);
+            headerRight.Controls.Add(searchBox);
+            headerRight.Dock = DockStyle.Fill;
+            headerRight.FlowDirection = FlowDirection.RightToLeft;
+            headerRight.Location = new Point(441, 3);
+            headerRight.Name = "headerRight";
+            headerRight.Size = new Size(431, 30);
+            headerRight.TabIndex = 6;
+            // 
+            // headerLeft
+            // 
+            headerLeft.Controls.Add(browseButton);
+            headerLeft.Controls.Add(randomButton);
+            headerLeft.Controls.Add(favoritesButton);
+            headerLeft.Dock = DockStyle.Fill;
+            headerLeft.Location = new Point(3, 3);
+            headerLeft.Name = "headerLeft";
+            headerLeft.Size = new Size(432, 30);
+            headerLeft.TabIndex = 0;
+            // 
+            // Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(875, 450);
-            Controls.Add(flowLayoutPanel);
-            Controls.Add(headerPanel);
+            Controls.Add(tableLayoutPanel);
             Name = "Form";
-            Text = "Form";
-            headerPanel.ResumeLayout(false);
-            headerPanel.PerformLayout();
+            Text = "Chicago Art Explorer";
+            tableLayoutPanel.ResumeLayout(false);
+            headerRight.ResumeLayout(false);
+            headerRight.PerformLayout();
+            headerLeft.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
         private PictureBox pictureBox1;
         private TextBox searchBox;
         private Button searchButton;
-        private Panel headerPanel;
         private Button browseButton;
         private Button randomButton;
         private Button exitButton;
         private Button favoritesButton;
         private Panel outputPanel;
         private Panel panel1;
-        private FlowLayoutPanel flowLayoutPanel;
+        private Panel panel;
+        private TableLayoutPanel tableLayoutPanel;
+        private FlowLayoutPanel headerLeft;
+        private FlowLayoutPanel headerRight;
     }
 }

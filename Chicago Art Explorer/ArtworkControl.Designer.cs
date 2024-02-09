@@ -1,6 +1,6 @@
 ﻿namespace Chicago_Art_Explorer
 {
-    partial class SearchControl
+    partial class ArtworkControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,57 +29,58 @@
         private void InitializeComponent()
         {
             imageBox = new PictureBox();
-            label1 = new Label();
-            summary = new TextBox();
-            title = new TextBox();
+            title = new Label();
+            Description = new Label();
+            summary = new Label();
             ((System.ComponentModel.ISupportInitialize)imageBox).BeginInit();
             SuspendLayout();
             // 
             // imageBox
             // 
-            imageBox.Location = new Point(20, 17);
+            imageBox.Dock = DockStyle.Fill;
+            imageBox.Location = new Point(0, 0);
             imageBox.Name = "imageBox";
-            imageBox.Size = new Size(123, 114);
+            imageBox.Size = new Size(397, 553);
             imageBox.SizeMode = PictureBoxSizeMode.Zoom;
             imageBox.TabIndex = 0;
             imageBox.TabStop = false;
             // 
-            // label1
+            // title
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(149, 17);
-            label1.Name = "label1";
-            label1.Size = new Size(0, 15);
-            label1.TabIndex = 1;
+            title.Dock = DockStyle.Top;
+            title.Location = new Point(0, 0);
+            title.Name = "title";
+            title.Size = new Size(397, 15);
+            title.TabIndex = 1;
+            title.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // Description
+            // 
+            Description.AutoSize = true;
+            Description.Location = new Point(3, 448);
+            Description.Name = "Description";
+            Description.Size = new Size(0, 15);
+            Description.TabIndex = 3;
             // 
             // summary
             // 
-            summary.Location = new Point(155, 17);
-            summary.Multiline = true;
+            summary.Dock = DockStyle.Bottom;
+            summary.Location = new Point(0, 538);
             summary.Name = "summary";
-            summary.ReadOnly = true;
-            summary.Size = new Size(172, 114);
+            summary.Size = new Size(397, 15);
             summary.TabIndex = 2;
+            summary.TextAlign = ContentAlignment.TopCenter;
             // 
-            // title
-            // 
-            title.Location = new Point(20, 149);
-            title.Multiline = true;
-            title.Name = "title";
-            title.ReadOnly = true;
-            title.Size = new Size(307, 44);
-            title.TabIndex = 3;
-            // 
-            // SearchControl
+            // ArtworkControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(title);
+            Controls.Add(Description);
             Controls.Add(summary);
-            Controls.Add(label1);
+            Controls.Add(title);
             Controls.Add(imageBox);
-            Name = "SearchControl";
-            Size = new Size(344, 209);
+            Name = "ArtworkControl";
+            Size = new Size(397, 553);
             ((System.ComponentModel.ISupportInitialize)imageBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -88,8 +89,8 @@
         #endregion
 
         private PictureBox imageBox;
-        private Label label1;
-        private TextBox summary;
-        private TextBox title;
+        private Label title;
+        private Label Description;
+        private Label summary;
     }
 }

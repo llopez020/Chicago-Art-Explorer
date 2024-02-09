@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace Chicago_Art_Explorer
 {
-    public partial class SearchControl : UserControl
+    public partial class ArtworkControl : UserControl
     {
         /// <summary> 
         /// Initialize Component.
         /// </summary>
-        public SearchControl()
+        public ArtworkControl()
         {
             InitializeComponent();
         }
@@ -46,5 +46,6 @@ namespace Chicago_Art_Explorer
             get { return imageBox.Image; }
             set { imageBox.Image = value; }
         }
+
     }
 }
