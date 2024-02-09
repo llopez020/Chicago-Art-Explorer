@@ -8,11 +8,12 @@ Work in progress
 .Net, C#, Windows Forms
 
 ## Current Features
+- Browsing functionality to view various artworks in the collection
 - Search functionality to view preferred artworks
+- Find your favorite new art piece through the ranomizer button
 
 ## TODO
 - Save favorite art pieces to the favorites tab
-- Casually browse the art selection
-- Close program through exit button
-- Find a random art piece through the randomize button
+- UI improvements
+- Go through various pages in your search or browsing session
 - More to come
