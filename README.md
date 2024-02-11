@@ -15,6 +15,4 @@ Work in progress
 ## TODO
 - Save favorite art pieces to the favorites tab
 - UI improvements
-- Go through various pages in your search or browsing session
-- Optimizing API requests
 - More to come
