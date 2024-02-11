@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.Devices;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,6 +14,7 @@ namespace Chicago_Art_Explorer
 {
     public partial class ArtworkControl : UserControl
     {
+
         /// <summary> 
         /// Initialize Component.
         /// </summary>
@@ -35,7 +38,7 @@ namespace Chicago_Art_Explorer
         public string SetSummary
         {
             get { return summary.Text; }
-            set { summary.Text = value; }
+            set { summary.Text = Regex.Replace(value, @"<[^>]*>", ""); }
         }
 
         /// <summary> 
@@ -46,6 +49,5 @@ namespace Chicago_Art_Explorer
             get { return imageBox.Image; }
             set { imageBox.Image = value; }
         }
-
     }
 }

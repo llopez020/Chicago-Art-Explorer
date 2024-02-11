@@ -48,9 +48,10 @@
             // title
             // 
             title.Dock = DockStyle.Top;
+            title.Font = new Font("Segoe UI", 14F);
             title.Location = new Point(0, 0);
             title.Name = "title";
-            title.Size = new Size(397, 15);
+            title.Size = new Size(397, 50);
             title.TabIndex = 1;
             title.TextAlign = ContentAlignment.TopCenter;
             // 

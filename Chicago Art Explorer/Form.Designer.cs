@@ -38,6 +38,8 @@
             tableLayoutPanel = new TableLayoutPanel();
             headerRight = new FlowLayoutPanel();
             headerLeft = new FlowLayoutPanel();
+            footerLeft = new FlowLayoutPanel();
+            footerRight = new FlowLayoutPanel();
             tableLayoutPanel.SuspendLayout();
             headerRight.SuspendLayout();
             headerLeft.SuspendLayout();
@@ -45,16 +47,16 @@
             // 
             // searchBox
             // 
-            searchBox.Location = new Point(21, 3);
+            searchBox.Location = new Point(40, 3);
             searchBox.Margin = new Padding(3, 3, 0, 3);
             searchBox.Name = "searchBox";
-            searchBox.Size = new Size(257, 23);
+            searchBox.Size = new Size(358, 23);
             searchBox.TabIndex = 1;
             searchBox.KeyDown += searchBox_KeyDown;
             // 
             // searchButton
             // 
-            searchButton.Location = new Point(278, 3);
+            searchButton.Location = new Point(398, 3);
             searchButton.Margin = new Padding(0, 3, 20, 3);
             searchButton.Name = "searchButton";
             searchButton.Size = new Size(52, 23);
@@ -75,7 +77,7 @@
             // 
             // exitButton
             // 
-            exitButton.Location = new Point(353, 3);
+            exitButton.Location = new Point(473, 3);
             exitButton.Name = "exitButton";
             exitButton.Size = new Size(75, 23);
             exitButton.TabIndex = 5;
@@ -114,25 +116,28 @@
             panel.Dock = DockStyle.Fill;
             panel.Location = new Point(3, 39);
             panel.Name = "panel";
-            panel.Size = new Size(869, 408);
+            panel.Size = new Size(869, 372);
             panel.TabIndex = 4;
             panel.Tag = "";
             // 
             // tableLayoutPanel
             // 
             tableLayoutPanel.ColumnCount = 2;
-            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50.0571442F));
-            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 49.9428558F));
+            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 36.41686F));
+            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 63.58314F));
+            tableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             tableLayoutPanel.Controls.Add(headerRight, 1, 0);
             tableLayoutPanel.Controls.Add(panel, 0, 1);
             tableLayoutPanel.Controls.Add(headerLeft, 0, 0);
+            tableLayoutPanel.Controls.Add(footerLeft, 0, 2);
+            tableLayoutPanel.Controls.Add(footerRight, 1, 2);
             tableLayoutPanel.Dock = DockStyle.Fill;
             tableLayoutPanel.Location = new Point(0, 0);
             tableLayoutPanel.Name = "tableLayoutPanel";
-            tableLayoutPanel.RowCount = 2;
+            tableLayoutPanel.RowCount = 3;
             tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 88.6666641F));
-            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
             tableLayoutPanel.Size = new Size(875, 450);
             tableLayoutPanel.TabIndex = 5;
             // 
@@ -143,9 +148,9 @@
             headerRight.Controls.Add(searchBox);
             headerRight.Dock = DockStyle.Fill;
             headerRight.FlowDirection = FlowDirection.RightToLeft;
-            headerRight.Location = new Point(441, 3);
+            headerRight.Location = new Point(321, 3);
             headerRight.Name = "headerRight";
-            headerRight.Size = new Size(431, 30);
+            headerRight.Size = new Size(551, 30);
             headerRight.TabIndex = 6;
             // 
             // headerLeft
@@ -156,8 +161,25 @@
             headerLeft.Dock = DockStyle.Fill;
             headerLeft.Location = new Point(3, 3);
             headerLeft.Name = "headerLeft";
-            headerLeft.Size = new Size(432, 30);
+            headerLeft.Size = new Size(312, 30);
             headerLeft.TabIndex = 0;
+            // 
+            // footerLeft
+            // 
+            footerLeft.Dock = DockStyle.Fill;
+            footerLeft.Location = new Point(3, 417);
+            footerLeft.Name = "footerLeft";
+            footerLeft.Size = new Size(312, 30);
+            footerLeft.TabIndex = 7;
+            // 
+            // footerRight
+            // 
+            footerRight.Dock = DockStyle.Fill;
+            footerRight.FlowDirection = FlowDirection.RightToLeft;
+            footerRight.Location = new Point(321, 417);
+            footerRight.Name = "footerRight";
+            footerRight.Size = new Size(551, 30);
+            footerRight.TabIndex = 8;
             // 
             // Form
             // 
@@ -188,5 +210,7 @@
         private TableLayoutPanel tableLayoutPanel;
         private FlowLayoutPanel headerLeft;
         private FlowLayoutPanel headerRight;
+        private FlowLayoutPanel footerLeft;
+        private FlowLayoutPanel footerRight;
     }
 }

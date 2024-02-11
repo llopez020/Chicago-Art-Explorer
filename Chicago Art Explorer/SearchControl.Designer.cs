@@ -43,6 +43,7 @@
             imageBox.SizeMode = PictureBoxSizeMode.Zoom;
             imageBox.TabIndex = 0;
             imageBox.TabStop = false;
+            imageBox.Click += searchControl_Click;
             // 
             // label1
             // 
@@ -51,6 +52,7 @@
             label1.Name = "label1";
             label1.Size = new Size(0, 15);
             label1.TabIndex = 1;
+            label1.Click += searchControl_Click;
             // 
             // summary
             // 
@@ -60,6 +62,7 @@
             summary.ReadOnly = true;
             summary.Size = new Size(172, 114);
             summary.TabIndex = 2;
+            summary.Click += searchControl_Click;
             // 
             // title
             // 
@@ -69,7 +72,8 @@
             title.ReadOnly = true;
             title.Size = new Size(307, 44);
             title.TabIndex = 3;
-            // 
+            title.Click += searchControl_Click;
+            //
             // SearchControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -78,8 +82,11 @@
             Controls.Add(summary);
             Controls.Add(label1);
             Controls.Add(imageBox);
+            this.Click += searchControl_Click;
+            this.BorderStyle = BorderStyle.Fixed3D;
             Name = "SearchControl";
             Size = new Size(344, 209);
+            
             ((System.ComponentModel.ISupportInitialize)imageBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
