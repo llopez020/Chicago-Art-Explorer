@@ -10,6 +10,7 @@ Work in progress
 ## Current Features
 - Browsing functionality to view various artworks in the collection
 - Search functionality to view preferred artworks
+- Examine artworks by clicking on their search component, allowing for a closer look.
 - Find your favorite new art piece through the randomizer button
 
 ## TODO
